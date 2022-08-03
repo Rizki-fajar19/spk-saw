@@ -11,7 +11,7 @@ class AlternatifController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     public function index()
     {
         $data['alternatif'] = Alternatif::get();
@@ -21,17 +21,17 @@ class AlternatifController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'nama_alternatif' => 'required|string', 
-            
+            'nama_alternatif' => 'required|string',
+
         ]);
 
         try {
             $alternatif = new Alternatif();
             $alternatif->nama_alternatif = $request->nama_alternatif;
             $alternatif->save();
-            return back()->with(['msg','Berhasil menambahkan data']);
+            return back()->with('msg','Berhasil menambahkan data');
         } catch (Exception $e) {
-            \Log::emergency("File:" . $e->getFile(). "Line:" . $e->getLine(). 
+            \Log::emergency("File:" . $e->getFile(). "Line:" . $e->getLine().
             "Message:" . $e->getMessage());
             die("Gagal");
         }
@@ -46,7 +46,7 @@ class AlternatifController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'nama_alternatif' => 'required|string', 
+            'nama_alternatif' => 'required|string',
         ]);
 
         try {
@@ -54,9 +54,9 @@ class AlternatifController extends Controller
             $alternatif->update([
                 'nama_alternatif' => $request->nama_alternatif,
             ]);
-            return back()->with(['msg','Berhasil merubah data']);
+            return back()->with('msg','Berhasil merubah data');
         } catch (Exception $e) {
-            \Log::emergency("File:" . $e->getFile(). "Line:" . $e->getLine(). 
+            \Log::emergency("File:" . $e->getFile(). "Line:" . $e->getLine().
             "Message:" . $e->getMessage());
             die("Gagal");
         }
@@ -68,7 +68,7 @@ class AlternatifController extends Controller
             $alternatif = Alternatif::findOrFail($id);
             $alternatif->delete();
         } catch (Exception $e) {
-            \Log::emergency("File:" . $e->getFile(). "Line:" . $e->getLine(). 
+            \Log::emergency("File:" . $e->getFile(). "Line:" . $e->getLine().
             "Message:" . $e->getMessage());
             die("Gagal");
         }

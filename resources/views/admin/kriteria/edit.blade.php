@@ -35,7 +35,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="attribut">Attribut Kriteria</label>
-                                <select name="attribut" id="" class="form-control-" required>
+                                <select name="attribut" id="" class="form-control" required>
                                     <option {{ $kriteria->attribut == 'Benefit' ? 'selected' : '' }}>Benefit</option>
                                     <option {{ $kriteria->attribut == 'Cost' ? 'selected' : '' }}>Cost</option>
                                 </select>

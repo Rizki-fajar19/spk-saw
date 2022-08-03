@@ -12,7 +12,7 @@ class KriteriaController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     public function index()
     {
         $data['kriteria'] = Kriteria::orderBy('nama_kriteria','ASC')->get();
@@ -22,7 +22,7 @@ class KriteriaController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'nama_kriteria' => 'required|string', 
+            'nama_kriteria' => 'required|string',
             'attribut'      => 'required|string',
             'bobot'         => 'required|numeric'
         ]);
@@ -33,9 +33,9 @@ class KriteriaController extends Controller
             $kriteria->attribut = $request->attribut;
             $kriteria->bobot = $request->bobot;
             $kriteria->save();
-            return back()->with(['msg','Berhasil menambahkan data']);
+            return back()->with('msg','Berhasil menambahkan data');
         } catch (Exception $e) {
-            \Log::emergency("File:" . $e->getFile(). "Line:" . $e->getLine(). 
+            \Log::emergency("File:" . $e->getFile(). "Line:" . $e->getLine().
             "Message:" . $e->getMessage());
             die("Gagal");
         }
@@ -50,7 +50,7 @@ class KriteriaController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'nama_kriteria' => 'required|string', 
+            'nama_kriteria' => 'required|string',
             'attribut'      => 'required|string',
             'bobot'         => 'required|numeric'
         ]);
@@ -62,9 +62,9 @@ class KriteriaController extends Controller
                 'attribut'      => $request->attribut,
                 'bobot'         => $request->bobot
             ]);
-            return back()->with(['msg','Berhasil merubah data']);
+            return back()->with('msg','Berhasil merubah data');
         } catch (Exception $e) {
-            \Log::emergency("File:" . $e->getFile(). "Line:" . $e->getLine(). 
+            \Log::emergency("File:" . $e->getFile(). "Line:" . $e->getLine().
             "Message:" . $e->getMessage());
             die("Gagal");
         }
@@ -76,7 +76,7 @@ class KriteriaController extends Controller
             $kriteria = Kriteria::findOrFail($id);
             $kriteria->delete();
         } catch (Exception $e) {
-            \Log::emergency("File:" . $e->getFile(). "Line:" . $e->getLine(). 
+            \Log::emergency("File:" . $e->getFile(). "Line:" . $e->getLine().
             "Message:" . $e->getMessage());
             die("Gagal");
         }

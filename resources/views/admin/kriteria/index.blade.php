@@ -116,7 +116,7 @@
     <script src="{{ asset('vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
     <script src="{{ asset('js/sweetalert.js') }}"></script>
     <script>
-        $(document).ready(funtion(){
+        $(document).ready(function(){
             $('#DataTable').DataTable();
 
             $('.hapus').on('click', function(){

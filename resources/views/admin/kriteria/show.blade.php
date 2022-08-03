@@ -101,7 +101,7 @@
     <script src="{{ asset('vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
     <script src="{{ asset('js/sweetalert.js') }}"></script>
     <script>
-        $(document).ready(funtion(){
+        $(document).ready(function(){
             $('#DataTable').DataTable();
 
             $('.hapus').on('click', function(){
@@ -125,7 +125,7 @@
                                 swal("Data berhasil dihapus!", {
                                 icon: "success",
                                 }).then((willDelete) => {
-                                    window.location = "{{ route('kriteria.show',$kriteria->id) }}"
+                                    window.location = "{{ route('kriteria.index') }}"
                                 });
                             }
                         })

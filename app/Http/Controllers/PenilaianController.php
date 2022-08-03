@@ -20,7 +20,8 @@ class PenilaianController extends Controller
 
     public function store(Request $request)
     {
-        // return response()->json($request);
+        //return response()->json($request);
+        $alternatif = count($request->crips_id);
         try {
             DB::select("TRUNCATE penilaian");
             foreach ($request->crips_id as $key => $value) {
@@ -35,7 +36,7 @@ class PenilaianController extends Controller
 
             return back()->with('msg','Berhasil disimpan');
         } catch (Exception $e) {
-            \Log::emergency("File:" . $e->getFile(). "Line:" . $e->getLine(). 
+            \Log::emergency("File:" . $e->getFile(). "Line:" . $e->getLine().
             "Message:" . $e->getMessage());
             die("Gagal");
         }

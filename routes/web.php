@@ -13,11 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
+Route::get('/welcome', function () {
+    return view('welcome');
+});
 
 Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
 Route::resource("kriteria", "KriteriaController")->except(['create']);
 Route::resource("alternatif","AlternatifController")->except(['create','show']);
 Route::resource("crips","CripsController")->except(['index','create','show']);
-Route::resource('/penilaian', 'PenilaianController');
+Route::resource('/penilaian','PenilaianController');
+Route::get('/perhitungan','AlgoritmaController@index')->name('perhitungan.index');
