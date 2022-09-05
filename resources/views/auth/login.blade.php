@@ -42,7 +42,7 @@
                         <!-- Nested Row within Card Body -->
                         <div class="row">
                             <div class="col-lg-6 d-none d-lg-block text-center" id="title">
-                                <h3>Sistem Pendukung Keputusan Metode Simple Additive Weighting SAW</h3>
+                                <h3>Sistem Pendukung Keputusan Penerimaan Bantuan Sosial Metode Simple Additive Weighting</h3>
                             </div>
                             <div class="col-lg-6">
                                 <div class="p-5">
@@ -52,7 +52,7 @@
                                     <form class="user" method="post" action="{{ route('login') }}">
                                         @csrf
                                         <div class="form-group">
-                                            <input  id="email" type="email"  class="form-control form-control-user @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required 
+                                            <input  id="email" type="email"  class="form-control form-control-user @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required
                                             autocomplete="email" autofocus placeholder="Masukan Email">
                                         @error('email')
                                             <span class="invalid-feedback" role="alert">
@@ -61,7 +61,7 @@
                                         @enderror
                                         </div>
                                         <div class="form-group">
-                                            <input  id="password" type="password" class="form-control form-control-user @error('password') is-invalid @enderror" name="password" required 
+                                            <input  id="password" type="password" class="form-control form-control-user @error('password') is-invalid @enderror" name="password" required
                                             autocomplete="current-password" placeholder="Masukan Password">
                                         @error('password')
                                             <span class="invalid-feedback" role="alert">

@@ -45,12 +45,12 @@
         <div class="col-md-8">
             <div class="card shadow mb-4">
                 <!-- Card Header - Accordion -->
-                <a href="#listkriteria" class="d-block card-header py-3" data-toggle="collapse"
+                <a href="#listalternatif" class="d-block card-header py-3" data-toggle="collapse"
                     role="button" aria-expanded="true" aria-controls="collapseCardExample">
-                    <h6 class="m-0 font-weight-bold text-primary">List Kriteria</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">List Alternatif</h6>
                 </a>
                 <!-- Card Content - Collapse -->
-                <div class="collapse show" id="listkriteria">
+                <div class="collapse show" id="listalternatif">
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table table-striped table-hover" id="DataTable">

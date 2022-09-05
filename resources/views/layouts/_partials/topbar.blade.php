@@ -5,11 +5,18 @@
                         <i class="fa fa-bars"></i>
                     </button>
 
-                    
+
 
                     <!-- Topbar Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        
+                    <ul class="navbar-nav ml-auto ">
+                        <div class="text-center mt-3">
+                            <h6>SELAMAT DATANG DI WEBSITE SISTEM PENDUKUNG KEPUTUSAN PENERIMAAN BANTUAN SOSIAL</h6>
+                            <h6>DINAS SOSIAL KABUPATEN INDRAMAYU</h6>
+                        </div>
+                            {{-- <li class="nav-item active mr-auto">
+                                <a class="nav-link" href="">SELAMAT DATANG DI WEBSITE SISTEM PENDUKUNG KEPUTUSAN PENERIMAAN BANTUAN SOSIAL DINAS SOSIAL KABUPATEN INDRAMAYU</a>
+                            </li> --}}
+
                         <div class="topbar-divider d-none d-sm-block"></div>
 
                         <!-- Nav Item - User Information -->

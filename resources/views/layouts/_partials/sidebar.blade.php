@@ -20,7 +20,7 @@
 
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('kriteria.index') }}">
-                    <i class="fas fa-fw fa-list"></i>
+                    <i class="fas fa-stream"></i>
                     <span>Kriteria</span></a>
             </li>
 
@@ -32,13 +32,13 @@
 
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('penilaian.index') }}">
-                    <i class="fas fa-fw fa-list"></i>
+                    <i class="fas fa-database"></i>
                     <span>Penilaian</span></a>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('perhitungan.index') }}">
-                    <i class="fas fa-fw fa-list"></i>
+                    <i class="fas fa-divide"></i>
                     <span>Perhitungan</span></a>
             </li>
 

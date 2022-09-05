@@ -91,7 +91,10 @@
                                     @foreach($kriteria as $row)
                                         <tr>
                                             <td>{{ $no++ }}</td>
-                                            <td>{{ $row->nama_kriteria }}</td>
+                                            <td style="display: -webkit-box;
+                                            -webkit-line-clamp: 1;
+                                            -webkit-box-orient: vertical;
+                                            overflow: hidden; width: 200px" class="p-0">{{ $row->nama_kriteria }}</td>
                                             <td>{{ $row->attribut }}</td>
                                             <td>{{ $row->bobot }}</td>
                                             <td>

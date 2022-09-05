@@ -115,6 +115,7 @@
                                         <td>{{ $key }}</td>
                                         @foreach($value as $key_1 => $value_1)
                                             <td>{{ number_format($value_1,1) }}</td>
+                                            {{-- <td>{{$value_1}}</td> --}}
                                         @endforeach
                                         <td>{{ $no++ }}</td>
                                     </tr>

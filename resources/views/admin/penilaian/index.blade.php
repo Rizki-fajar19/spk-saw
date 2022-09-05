@@ -38,28 +38,28 @@
                             <tr>
                                 <td>{{ $valt->nama_alternatif }}</td>
                                 @if(count($valt->penilaian) > 0)
-                                @foreach($kriteria as $key => $value)
-                                <td>
-
-                                    <select name="crips_id[{{ $valt->id }}][]" class="form-control">
-                                        @foreach($value->crips as $k_1 => $v_1)
-                                        <option value="{{ $v_1->id }}"
-                                            {{ $v_1->id == $valt->penilaian[$key]->crips_id ? 'selected' : '' }}>
-                                            {{ $v_1->nama_crips }}</option>
-                                        @endforeach
-                                    </select>
-                                </td>
-                                @endforeach
+                                    @foreach($kriteria as $key => $value)
+                                    <td>
+                                        <select name="crips_id[{{ $valt->id }}][]" class="form-control">
+                                            @foreach($value->crips as $k_1 => $v_1)
+                                            <option value="{{ $v_1->id }}"
+                                                {{ $v_1->id == $valt->penilaian[$key]->crips_id ? 'selected' : '' }}>
+                                                {{ $v_1->nama_crips }}
+                                            </option>
+                                            @endforeach
+                                        </select>
+                                    </td>
+                                    @endforeach
                                 @else
-                                @foreach($kriteria as $key => $value)
-                                <td>
-                                    <select name="crips_id[{{ $valt->id }}][]" class="form-control">
-                                        @foreach($value->crips as $k_1 => $v_1)
-                                        <option value="{{ $v_1->id }}">{{ $v_1->nama_crips }}</option>
-                                        @endforeach
-                                    </select>
-                                </td>
-                                @endforeach
+                                    @foreach($kriteria as $key => $value)
+                                    <td>
+                                        <select name="crips_id[{{ $valt->id }}][]" class="form-control">
+                                            @foreach($value->crips as $k_1 => $v_1)
+                                            <option value="{{ $v_1->id }}">{{ $v_1->nama_crips }}</option>
+                                            @endforeach
+                                        </select>
+                                    </td>
+                                    @endforeach
                                 @endif
                             </tr>
                             @empty

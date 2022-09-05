@@ -14,8 +14,15 @@ class PenilaianController extends Controller
     {
         $alternatif = Alternatif::with('penilaian.crips')->get();
         $kriteria = Kriteria::with('crips')->orderBy('nama_kriteria','ASC')->get();
-        //return response()->json($alternatif);
+        // return response()->json($alternatif);
+        // return response()->json($kriteria);
         return view('admin.penilaian.index',compact('alternatif','kriteria'));
+
+
+        // foreach ($alternatif as $alt => $valt) {
+        //     echo count($valt->penilaian) . ', ';
+        // }
+
     }
 
     public function store(Request $request)

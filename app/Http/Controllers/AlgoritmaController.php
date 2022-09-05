@@ -19,7 +19,7 @@ class AlgoritmaController extends Controller
         $alternatif = Alternatif::with('penilaian.crips')->get();
         $kriteria = Kriteria::with('crips')->orderBy('nama_kriteria','ASC')->get();
         $penilaian = Penilaian::with('crips','alternatif')->get();
-        //return response()->json($alternatif);
+        // return response()->json($alternatif);
         if (count($penilaian) == 0) {
             return redirect(route('penilaian.index'));
         }
@@ -53,7 +53,7 @@ class AlgoritmaController extends Controller
         //perankingan
         foreach ($normalisasi as $key => $value) {
             foreach ($kriteria as $key_1 => $value_1) {
-                //dd(key_1);
+                // dd(key_1);
                 $rank[$key][] = $value[$value_1->id] * $value_1->bobot;
             }
         }
@@ -61,8 +61,15 @@ class AlgoritmaController extends Controller
         foreach ($normalisasi as $key => $value) {
             $ranking[$key][] = array_sum($rank[$key]);
         }
-        arsort($ranking);
-        //dd($normalisasi);
+        // arsort($ranking);
+        // foreach ($ranking as $key => $value) {
+        //     foreach ($value as $key_1 => $value_1) {
+        //         echo  number_format($value_1,1);
+        //     }
+        // }
+        // dd($ranking);
+        $columns = array_column($ranking, 8);
+        array_multisort($columns, SORT_DESC, $ranking);
         return view('admin.perhitungan.index',compact('alternatif','kriteria','normalisasi','ranking'));
         // foreach ($normalisasi as $key => $value) {
         //     // echo $key;
@@ -74,5 +81,12 @@ class AlgoritmaController extends Controller
         //     }
         // }
         // return '';
+
+        // $data = $ranking->sortByDesc()
+        // echo $ranking["Genandra"][8];
+        // $columns = array_column($ranking, 8);
+        // array_multisort($columns, SORT_DESC, $ranking);
+        // dd($ranking);
+
     }
 }
