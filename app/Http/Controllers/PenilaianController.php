@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Penilaian;
 use App\Alternatif;
 use App\Kriteria;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Imports\PenilaianImport;
 use DB;
 
 class PenilaianController extends Controller
@@ -47,5 +49,16 @@ class PenilaianController extends Controller
             "Message:" . $e->getMessage());
             die("Gagal");
         }
+    }
+
+    // public function importExcel(Request $request)
+    // {
+    //     Excel::import(new UsersImport, request()->file('file'));
+    //     return back();
+    // } 
+    public function importExcel(Request $request)
+    {
+        Excel::import(new PenilaianImport, request()->file('file'));
+        return back();
     }
 }

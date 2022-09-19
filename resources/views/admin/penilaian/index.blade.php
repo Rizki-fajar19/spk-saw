@@ -19,9 +19,32 @@
             </div>
             @endif
             <div class="table-responsive">
+                <form action="/import" method="post" enctype="multipart/form-data">
+                    @csrf
+                    <div class="form-group">
+                        {{-- <input type="file" name="file" class="form-control-file" id="exampleFormControlFile1"> --}}
+                        <input type="file" name="file" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
+                        <button class="btn btn-primary" type="submit" id="button-addon2">Import</button>
+                        {{-- <button class="mt-3 btn btn-sm btn-success" type="submit" id="button-addon2">Import</button> --}}
+                    </div>
+                </form>
                 <form action="{{ route('penilaian.store') }}" method="post">
                     @csrf
-                    <button class="btn btn-sm btn-primary float-right">Simpan</button>
+                    <button  class="btn btn-sm btn-primary float-right">Simpan</button>
+                    {{-- <a href="" class="btn btn-sm btn-success float-left">Import</a> --}}
+                    {{-- <form action="/" method="post" enctype="multipart/form-data">
+                        @csrf
+                        <input type="file" name="file" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
+                        <button class="btn btn-primary" type="submit" id="button-addon2">Import</button>
+                    </form> --}}
+                    {{-- <a href="" class="ml-3 btn btn-sm btn-success float-left">Unduh Template</a>
+                    <a href="" class="ml-3 btn btn-sm btn-danger float-left">Reset</a> --}}
+                    {{-- <form>
+                        <div class="form-group">
+                            <input type="file" name="file" class="form-control-file" id="exampleFormControlFile1">
+                            <button class="mt-3 btn btn-sm btn-success" type="submit" id="button-addon2">Import</button>
+                        </div>
+                    </form> --}}
                     <br></br>
                     <table class="table">
                         <thead>
